@@ -25,3 +25,36 @@ Video recording will be in
 ```
 npx cypress open
 ```
+
+---
+
+# Gherkin scenarios
+
+```
+Given a locked out user  
+When the user logs in
+Then the screen will promt an error message
+```
+
+```
+Given a valid user  
+When the user logs in
+And select the first product 
+Then the product is added to the cart
+```
+
+```
+Given a valid user  
+When the user logs in
+And filter products by price
+Then the products list will rearrange
+```
+
+```
+Given a valid user  
+When the user logs in
+And select the first product 
+And the product is added to the cart
+And complete the checkout process
+Then a checkout overview screen is shown
+```
