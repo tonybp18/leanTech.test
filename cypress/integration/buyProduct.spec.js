@@ -13,7 +13,8 @@ import { CheckoutOverviewPage } from "../page-objects/checkout-overview-page"
     const menuPage = new MenuPage
 
     const filterOptions = {
-        LOW_TO_HIGH: "Price (low to high)"
+        LOW_TO_HIGH: "Price (low to high)",
+        HIGH_TO_LOW: "Price (high to low)"
     }
 
     beforeEach(() => {
@@ -21,8 +22,8 @@ import { CheckoutOverviewPage } from "../page-objects/checkout-overview-page"
     })
 
     afterEach(() => {
-        // menuPage.resetAppState()
-        // menuPage.logout()
+        menuPage.resetAppState()
+        menuPage.logout()
     })
 
     it('Should select and buy the lowest product', () => {
@@ -34,6 +35,32 @@ import { CheckoutOverviewPage } from "../page-objects/checkout-overview-page"
 
         productPage
             .filter(filterOptions.LOW_TO_HIGH)
+            .addToCartProductInPosition(0)
+
+        menuPage.goToYourCart()
+
+        yourCartPage
+            .checkout()
+
+        checkoutInformationPage
+            .setFirstName("Foo")
+            .setLastName("Bar")
+            .setPostalCode("1010")
+            .continue()
+
+        checkoutOverviewPage
+            .finish()
+    })
+
+    it('Should select and buy the highest product', () => {
+
+        const productPage = new ProductPage
+        const yourCartPage = new YourCartPage
+        const checkoutInformationPage = new CheckoutInformationPage
+        const checkoutOverviewPage = new CheckoutOverviewPage
+
+        productPage
+            .filter(filterOptions.HIGH_TO_LOW)
             .addToCartProductInPosition(0)
 
         menuPage.goToYourCart()
