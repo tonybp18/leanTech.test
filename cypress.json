@@ -1,1 +1,20 @@
-{}
+{
+    "env" : {
+        "URL" : "https://www.saucedemo.com/",
+
+        "standard_user": "standard_user",
+        "standard_user_pass" : "secret_sauce",
+        
+        "locked_out_user": "locked_out_user",
+        "locked_out_user_pass" : "secret_sauce",
+
+        "problem_user": "problem_user",
+        "problem_user_pass" : "secret_sauce",
+
+        "performance_glitch_user": "performance_glitch_user",
+        "performance_glitch_user_pass" : "secret_sauce"
+    },
+
+    "watchForFileChanges": false
+
+}
