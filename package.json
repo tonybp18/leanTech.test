@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/tonybp18/leanTech.test/issues"
   },
-  "homepage": "https://github.com/tonybp18/leanTech.test#readme"
+  "homepage": "https://github.com/tonybp18/leanTech.test#readme",
+  "dependencies": {
+    "cypress": "^7.7.0"
+  }
 }
