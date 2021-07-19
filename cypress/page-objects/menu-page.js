@@ -19,4 +19,11 @@ export class MenuPage {
             .click()
     }
 
+    resetAppState() {
+        this.showMenu()
+
+        cy.get('#reset_sidebar_link')
+            .click()
+    }
+    
 }
