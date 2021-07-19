@@ -17,6 +17,9 @@
   },
   "homepage": "https://github.com/tonybp18/leanTech.test#readme",
   "devDependencies": {
-    "cypress": "^7.7.0"
+    "cypress": "^7.7.0",
+    "cypress-mochawesome-reporter": "^2.2.0",
+    "cypress-multi-reporters": "^1.5.0",
+    "mocha-junit-reporter": "^2.0.0"
   }
 }

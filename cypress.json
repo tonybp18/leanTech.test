@@ -1,6 +1,6 @@
 {
     "env" : {
-        "URL" : "https://www.saucedemo.com/",
+        "URL" : "https://www.saucedemo.com",
 
         "standard_user": "standard_user",
         "standard_user_pass" : "secret_sauce",
@@ -15,6 +15,23 @@
         "performance_glitch_user_pass" : "secret_sauce"
     },
 
-    "watchForFileChanges": false
+    "watchForFileChanges": false,
 
+    "chromeWebSecurity": false,
+
+    "reporter": "cypress-multi-reporters",
+    "reporterOptions": {
+        "reporterEnabled": "cypress-mochawesome-reporter, mocha-junit-reporter",
+        "mochaJunitReporterReporterOptions": {
+            "mochaFile": "cypress/reports/junit/results-[hash].xml"
+        },
+        "cypressMochawesomeReporterReporterOptions": {
+            "reportDir": "cypress/reports",
+            "reportPageTitle": "Swaglabs Test Suite",
+            "charts": true,
+            "embeddedScreenshots": true,
+            "inlineAssets": true
+        }
+    },
+    "video": true
 }
