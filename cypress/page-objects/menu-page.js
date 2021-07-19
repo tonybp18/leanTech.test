@@ -25,5 +25,10 @@ export class MenuPage {
         cy.get('#reset_sidebar_link')
             .click()
     }
-    
+
+    goToYourCart() {
+        cy.get('#shopping_cart_container')
+            .click()
+    }
+
 }
